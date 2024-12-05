@@ -1,0 +1,36 @@
+2103 Lab 1 Keypoints
+
+Vivado:
+
+-> Process
+
+1. Run Synthesis
+2. Run Implementation
+3. Bitstream
+4. Open Target and connect board
+5. Program on board
+
+
+-> Debugging
+- open messages in bottom panel for detailed error statements
+- synthesis error -> Coding error
+- simulation error -> testbench error (i think, maybe)
+- port error (bitstream) => constraint file issue, check port naming 
+	- map to correct port in FPGA (button is W19, U18, T17, T18, U17)
+	- in correct section (idk why its so sensitive)
+	- button in button section 
+	
+set_property PACKAGE_PIN W19 [get_ports fifty]
+    set_property IOSTANDARD LVCMOS33 [get_ports fifty]
+    
+set_property PACKAGE_PIN U18 [get_ports dollar]
+    set_property IOSTANDARD LVCMOS33 [get_ports dollar]
+    
+set_property PACKAGE_PIN T17 [get_ports cancel]
+    set_property IOSTANDARD LVCMOS33 [get_ports cancel]
+
+
+-> Testbench
+- test bench name must be same as verilog file
+
+
